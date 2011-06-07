@@ -1,0 +1,1 @@
+javascript:vars=document.createElement('script');s.setAttribute('language','javascript');varroot=location.protocol+'//'+location.host+'/javascripts/bookmarklet_script.js');s.setAttribute('src',root);document.body.appendChild(s);void(0);

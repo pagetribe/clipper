@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @clipping.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @clipping.content %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @clipping.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_clipping_path(@clipping) %> |
+<%= link_to 'Back', clippings_path %>

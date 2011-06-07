@@ -1,6 +1,6 @@
-module ApplicationHelper
+module ClippingsHelper
   def absolute_javascript_url(source)
-    uri = URI.parse(request.host_with_port)
+    uri = URI.parse(root_url)
     uri.merge(javascript_path(source))
   end
 end

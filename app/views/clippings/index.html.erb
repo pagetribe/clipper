@@ -1,0 +1,35 @@
+<h1>Listing clippings</h1>
+
+<p>
+  <a href="javascript:var d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f= 'http://<%= request.host_with_port %>/clippings/new',l=d.location,e=encodeURIComponent,p='?v=1&u='+e(l.href)%20+'&t='+e(d.title.replace(/^\s*|\s*$/g,''))%20+'&s='+e(s),u=f+p;location.href=u;">
+    Bookmarklet
+  </a>
+</p>
+<%= link_to "Bookmarklet", root_url + "javascripts/bookmarklet_script.js"%>
+<%= debug Rails.root %>
+<%= link_to "Bookmarklet", "javascript:void((function(){var%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('src','http://#{request.host_with_port}/javascripts/bookmarklet_script.js');document.body.appendChild(e)})())"%>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clippings.each do |clipping| %>
+  <tr>
+    <td><%= clipping.title %></td>
+    <td><%= clipping.content %></td>
+    <td><%= clipping.url %></td>
+    <td><%= link_to 'Show', clipping %></td>
+    <td><%= link_to 'Edit', edit_clipping_path(clipping) %></td>
+    <td><%= link_to 'Destroy', clipping, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Clipping', new_clipping_path %>
