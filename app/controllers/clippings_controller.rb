@@ -33,6 +33,7 @@ class ClippingsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @clipping }
+      format.js 
     end
   end
 

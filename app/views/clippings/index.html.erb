@@ -8,6 +8,7 @@
 <%= link_to "Bookmarklet", root_url + "javascripts/bookmarklet_script.js"%>
 <%= debug Rails.root %>
 <%= link_to "Bookmarklet", "javascript:void((function(){var%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('src','http://#{request.host_with_port}/javascripts/bookmarklet_script.js');document.body.appendChild(e)})())"%>
+<%= link_to "boobmarklet jq", "javascript:(function(){var head=document.getElementsByTagName('head')[0],script=document.createElement('script');script.type='text/javascript';script.src='http://#{request.host_with_port}/javascripts/bookmarklet_script.js?' + Math.floor(Math.random()*99999);head.appendChild(script);})(); void 0"%>
 <table>
   <tr>
     <th>Title</th>
