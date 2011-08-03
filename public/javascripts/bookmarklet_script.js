@@ -43,14 +43,14 @@ var clipFunctions = function() {
               container.style.padding = "0";
               container.style.margin = "0"; container.style.border = "1px solid #000000";
               container.id = "clippingbox";
-              container.style.position = "absolute";
+              container.style.position = "fixed";
               container.style.top = "0";
               container.style.right = "0";
               container.style.zIndex = 100000;
               container.style.width = "350px";
-              container.style.height = "400px";
+              container.style.height = "300px";
               container.style.backgroundColor = "white";
-              container.innerHTML = '<iframe style="width:100%;height:100%;border:0px;" id="clippyframe"></iframe>';
+              container.innerHTML = '<iframe style="width:100%;height:300px;%border:0px;" id="clippyframe"></iframe>';
               // container.innerHTML = javascript:var d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f= 'http://' + HOST_NAME + '/clippings/new',l=d.location,e=encodeURIComponent,p='?v=1&u='+e(l.href)%20+'&t='+e(d.title.replace(/^\s*|\s*$/g,''))%20+'&s='+e(s),u=f+p;location.href=u;
               document.body.appendChild(container);
               clippySetIframe();
