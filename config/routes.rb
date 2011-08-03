@@ -1,4 +1,6 @@
 Clipper::Application.routes.draw do
+  resources :notebooks
+
   resources :clippings
 
   # The priority is based upon order of creation:

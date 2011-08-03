@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @notebook.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_notebook_path(@notebook) %> |
+<%= link_to 'Back', notebooks_path %>
