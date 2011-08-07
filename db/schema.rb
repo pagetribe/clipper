@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110803110517) do
+ActiveRecord::Schema.define(:version => 20110807104726) do
 
   create_table "clippings", :force => true do |t|
     t.string   "title"
@@ -18,7 +18,10 @@ ActiveRecord::Schema.define(:version => 20110803110517) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "notebook_id"
   end
+
+  add_index "clippings", ["notebook_id"], :name => "index_clippings_on_notebook_id"
 
   create_table "notebooks", :force => true do |t|
     t.string   "name"
