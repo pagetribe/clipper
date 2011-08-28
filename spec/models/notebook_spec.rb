@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe Notebook do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "Associations" do
+    it "has many clippings" do
+      Notebook.new.should respond_to(:clippings)
+    end
+  end
 end
