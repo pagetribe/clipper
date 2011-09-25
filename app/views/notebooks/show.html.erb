@@ -3,7 +3,10 @@
 <p>
   <b>Name:</b>
   <%= @notebook.name %>
-</p>
+  </p>
+  <% @notebook.clippings.each do |clip| %>
+    <%= clip.title %></br>
+  <% end %>
 
 
 <%= link_to 'Edit', edit_notebook_path(@notebook) %> |

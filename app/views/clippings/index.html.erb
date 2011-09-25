@@ -11,6 +11,7 @@
 <%= link_to "boobmarklet jq", "javascript:(function(){var head=document.getElementsByTagName('head')[0],script=document.createElement('script');script.type='text/javascript';script.src='http://#{request.host_with_port}/javascripts/bookmarklet_script.js?' + Math.floor(Math.random()*99999);head.appendChild(script);})(); void 0"%>
 <table>
   <tr>
+    <th>Notebook</th>
     <th>Title</th>
     <th>Content</th>
     <th>Url</th>
@@ -21,9 +22,10 @@
 
 <% @clippings.each do |clipping| %>
   <tr>
+    <td><%= link_to clipping.notebook.name, notebook_path(clipping.notebook) %>
     <td><%= clipping.title %></td>
     <td><%= clipping.content %></td>
-    <td><%= clipping.url %></td>
+    <td><%= link_to clipping.url %></td>
     <td><%= link_to 'Show', clipping %></td>
     <td><%= link_to 'Edit', edit_clipping_path(clipping) %></td>
     <td><%= link_to 'Destroy', clipping, :confirm => 'Are you sure?', :method => :delete %></td>

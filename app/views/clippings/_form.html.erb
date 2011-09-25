@@ -23,6 +23,16 @@
     <%= f.label :url %><br />
     <%= f.text_field :url %>
   </div>
+  <div>
+    <%= f.label :notebook_id, "Notebook" %>
+    <%= f.collection_select :notebook_id, @notebook, :id, :name, :prompt => true %>
+  </div>
+  <div>
+    <%= f.fields_for :notebook do |builder| %>
+      <%= builder.label :name, "create new notebook" %>
+      <%= builder.text_field :name %>
+    <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

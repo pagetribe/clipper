@@ -25,10 +25,13 @@ class ClippingsController < ApplicationController
   # GET /clippings/new.xml
   def new
     @clipping = Clipping.new
+    @clipping.build_notebook
 
     @clipping.title = params[:t]
     @clipping.content = params[:s]
     @clipping.url = params[:u]
+
+    @notebook = Notebook.all
 
     respond_to do |format|
       format.html # new.html.erb
