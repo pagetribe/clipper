@@ -1,3 +1,4 @@
+<div class="form-stacked">
 <%= form_for(@clipping) do |f| %>
   <% if @clipping.errors.any? %>
     <div id="error_explanation">
@@ -13,15 +14,15 @@
 
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => 'xlarge' %>
   </div>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class => 'xlarge' %>
   </div>
   <div class="field">
     <%= f.label :url %><br />
-    <%= f.text_field :url %>
+    <%= f.text_field :url, :class => 'xlarge' %>
   </div>
   <div>
     <%= f.label :notebook_id, "Notebook" %>
@@ -30,10 +31,11 @@
   <div>
     <%= f.fields_for :notebook do |builder| %>
       <%= builder.label :name, "create new notebook" %>
-      <%= builder.text_field :name %>
+      <%= builder.text_field :name, :class => 'xlarge' %>
     <% end %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, :class => "btn primary" %>
   </div>
 <% end %>
+</div>

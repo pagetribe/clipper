@@ -43,6 +43,7 @@ class ClippingsController < ApplicationController
   # GET /clippings/1/edit
   def edit
     @clipping = Clipping.find(params[:id])
+    @notebook = Notebook.all
   end
 
   # POST /clippings
